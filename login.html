@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Acesse a PKFSPORT, sua loja de artigos esportivos.">
+
     <title>PKFSPORT | Login</title>
 
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
 </head>
 
 <body class="login-page">
 
     <main class="login-container">
 
-        <div class="login-card">
+        <section class="login-card">
 
-            <div class="logo-icon">
-                <i class="bi bi-trophy-fill"></i>
-            </div>
+            <a href="login.html" class="brand login-brand">
+                <span class="brand-icon">
+                    <i class="bi bi-trophy-fill"></i>
+                </span>
 
-            <h1 class="logo-title">
-                PKF<span>SPORT</span>
-            </h1>
+                <span class="logo-title">
+                    PKF<span>SPORT</span>
+                </span>
+            </a>
 
-            <h2>Acesse sua conta</h2>
+            <h1 id="form-title">Acesse sua conta</h1>
 
-            <p class="login-description">
-                Entre com seu e-mail e senha para acessar a loja.
+            <p class="login-description" id="form-description">
+                Entre para conferir nossa coleção esportiva.
             </p>
 
             <form id="login-form">
@@ -42,83 +44,110 @@
                     <label for="email">E-mail</label>
 
                     <div class="input-with-icon">
-                        <i class="bi bi-envelope"></i>
+                        <i class="bi bi-envelope" aria-hidden="true"></i>
 
                         <input
                             type="email"
                             id="email"
-                            placeholder="seu@email.com"
+                            name="email"
+                            placeholder="seuemail@exemplo.com"
                             autocomplete="email"
-                            required>
+                            required
+                        >
                     </div>
                 </div>
 
                 <div class="form-field">
-                    <label for="senha">Senha</label>
+                    <label for="password">Senha</label>
 
                     <div class="input-with-icon">
-                        <i class="bi bi-lock"></i>
+                        <i class="bi bi-lock" aria-hidden="true"></i>
 
                         <input
                             type="password"
-                            id="senha"
+                            id="password"
+                            name="password"
                             placeholder="Digite sua senha"
+                            minlength="4"
                             autocomplete="current-password"
-                            required>
+                            required
+                        >
 
                         <button
                             type="button"
-                            id="toggle-password"
                             class="password-toggle"
-                            aria-label="Mostrar senha">
-
+                            id="toggle-password"
+                            aria-label="Mostrar senha"
+                        >
                             <i class="bi bi-eye"></i>
-
                         </button>
                     </div>
                 </div>
 
-                <button type="submit" class="login-button">
-                    <i class="bi bi-box-arrow-in-right"></i>
+                <div
+                    class="form-field hidden"
+                    id="confirm-password-area"
+                >
+                    <label for="confirm-password">
+                        Confirmar senha
+                    </label>
+
+                    <div class="input-with-icon">
+                        <i class="bi bi-lock-fill" aria-hidden="true"></i>
+
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            name="confirm-password"
+                            placeholder="Digite a senha novamente"
+                            minlength="4"
+                            autocomplete="new-password"
+                        >
+                    </div>
+                </div>
+
+                <p
+                    id="login-message"
+                    class="message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+                <button
+                    type="submit"
+                    class="login-button"
+                    id="submit-button"
+                >
                     Entrar
                 </button>
 
             </form>
 
-            <button
-                type="button"
-                id="link-loja"
-                class="store-access-button">
-
-                Acessar loja sem login
-
-            </button>
-
             <div class="register-area">
-
-                <p>Ainda não possui uma conta?</p>
+                <p id="toggle-text">Ainda não tem conta?</p>
 
                 <button
                     type="button"
-                    id="register-button"
-                    class="register-button">
-
-                    Criar uma conta
-
+                    class="register-button"
+                    id="toggle-form"
+                >
+                    Criar conta
                 </button>
-
             </div>
 
-            <div class="login-help">
+            <a href="loja.html" class="store-access-button">
+                <i class="bi bi-shop"></i>
+                Conhecer a loja
+            </a>
+
+            <p class="login-help">
                 <i class="bi bi-shield-check"></i>
-                Ambiente seguro
-            </div>
+                Ambiente demonstrativo da PKFSPORT.
+            </p>
 
-        </div>
+        </section>
 
     </main>
-
-    <script src="script.js"></script>
 
 </body>
 </html>
